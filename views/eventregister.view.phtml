@@ -1,0 +1,78 @@
+<?php
+$arr = explode(",", implode(",", $_POST));
+foreach ($arr as $key => $value) {
+    if ($value == "Inscription") {
+        $selectedValue = $arr[$key - 1];
+    }
+}
+?>
+
+<div class="jumbotron" style="margin-top: 1%; border-radius: 50px;">
+<form method="POST" action="includes/eventregistration.php" onsubmit="return checkFunction();" style="
+	line-height: 2;
+	font-size: 20px;
+	margin-right: 8%;
+	margin-left: 8%;
+	border: 10px solid #00B9E5;
+	border-radius: 1%;
+	background-color: #F5F3F3;
+	padding: 1%;">
+<div class="select_event">
+<p> Attention ! Sélectionnez l'évènement auquel vous voulez participer :</p>
+</div>
+<select class="form-control" name="event">
+                <?php
+                $selectQry = "SELECT nom FROM events WHERE 1";
+                $selectRes = mysqli_query($conn, $selectQry);
+                if (!isset($selectedValue)) {
+                    echo "<option selected disabled value='0'> Veuillez choisir un evenement</option>";
+                    $selectedValue = null;
+                }
+                    while ($selectRow = mysqli_fetch_row($selectRes))
+                    foreach ($selectRow as $value)
+                        if ($value == $selectedValue)
+                            echo "<option selected value='${value}'>${value}</option>";
+                        else
+                            echo "<option value='${value}'>${value}</option>";
+                ?>
+            </select>
+ 
+			
+        <div class="form-group">
+            <label>Email</label>
+            <input name="email" class="form-control" placeholder="Adresse Email" required>
+        </div>
+        <div class="form-group">
+            <label>Mot de Passe</label>
+            <input name="mdp" class="form-control" type="password" placeholder="Mot de Passe" required>
+        </div>
+        <center><button type="submit" class="btn btn-primary mb-2" style="text-align:center">S'inscrire</button></center>
+    </form>
+</div>
+
+    
+
+
+        <!-- <div class="form-group">
+            <label>Adresse Email</label>
+            <input id="emailEventRegistration" name="email" class="form-control" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label>Evenement</label>   -->
+            
+        <!-- </div>
+        <div class="form-group">
+            <label>Nom</label>
+            <input id="nameEventRegistration" type="text" name="nom" class="form-control" placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <label>Prenom</label>
+            <input id="surnameEventRegistration" type="text" name="prenom" class="form-control" placeholder="Prenom">
+        </div>   -->
+            
+       
+
+
+   
+
+

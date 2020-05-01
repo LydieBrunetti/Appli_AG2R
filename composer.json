@@ -1,0 +1,14 @@
+{
+  "name": "quality/intel",
+  "description": "quality checking package",
+  "type": "project",
+  "minimum-stability": "stable",
+  "require": {
+    "squizlabs/php_codesniffer": "3.4.1",
+    "phpmd/phpmd": "2.6.0",
+    "ext-mysqli": "*",
+    "ext-json": "*",
+    "phpmailer/phpmailer": "^6.0",
+    "fpdf/fpdf": "^1.81"
+  }
+}

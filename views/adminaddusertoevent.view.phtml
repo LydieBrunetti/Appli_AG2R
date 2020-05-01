@@ -1,0 +1,33 @@
+<?php
+require('includes/config.php');
+$userQry = "SELECT nom FROM users WHERE 1";
+$userRes = mysqli_query($conn, $userQry);
+$eventQry = "SELECT nom FROM events WHERE 1";
+$eventRes = mysqli_query($conn,$eventQry);
+
+
+?>
+
+<div class="jumbotron">
+
+    <form action="includes/addusertoevent.php" method="post">
+        <a href="importgoogleform.php" class="btn btn-primary">Import Google Form</a>
+        <br>
+        <br>
+        <div class="form-group">
+            <label>Selectionnez l'utilisateur</label>
+            <select class="form-control">
+                <?php while ($userRow = mysqli_fetch_row($userRes)){echo "<option>  " . $userRow[0] . "</option>";}?>
+            </select>
+            <br>
+            <label>Selectionnez l'evenement</label>
+            <select class="form-control">
+                <?php while ($eventRow = mysqli_fetch_row($eventRes)){echo "<option>  " . $eventRow[0] . "</option>";}?>
+            </select>
+            <br>
+            <input role="button" type="submit" name="submit" class="btn btn-primary btn-lg" value="Valider"
+                   style="float:left;">
+
+        </div>
+    </form>
+</div>

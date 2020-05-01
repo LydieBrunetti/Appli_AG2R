@@ -1,0 +1,25 @@
+<?php
+require(__DIR__ .  '/../includes/config.php');
+
+$eventQry = "SELECT nom FROM events WHERE 1";
+$eventRes = mysqli_query($conn,$eventQry);
+
+
+?>
+
+<div class="jumbotron">
+
+    <form action="includes/fdr.php" method="post">
+
+        <div class="form-group">
+            <label>Selectionnez l'evenement</label>
+            <select class="form-control" name="event">
+                <?php while ($eventRow = mysqli_fetch_row($eventRes)){echo "<option>  " . $eventRow[0] . "</option>";}?>
+            </select>
+            <br>
+            <input role="button" type="submit" name="submit" class="btn btn-primary btn-lg" value="Voir feuille de route"
+                   style="float:left;">
+
+        </div>
+    </form>
+</div>

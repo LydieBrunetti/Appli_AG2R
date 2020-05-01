@@ -1,0 +1,95 @@
+<div class="jumbotron" style="margin-top: 1%; border-radius: 50px;">
+
+<form action="includes/register.php" method="POST" enctype="multipart/form-data" style="
+	line-height: 2;
+	font-size: 20px;
+	margin-right: 8%;
+	margin-left: 8%;
+	border: 0.1vw solid #00B9E5;
+	border-radius: 1%;
+	padding: 1%;">
+    <div class="form-group">
+        <label>Nom</label>
+        <input name="nom" class="form-control" placeholder="Votre nom" required>
+    </div>
+    <div class="form-group">
+        <label>Prenom</label>
+        <input name="prenom" class="form-control" placeholder="Votre prénom" required>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input name="email" class="form-control" placeholder="name@example.com" required>
+    </div>
+    <div class="form-group">
+        <label>Mot de Passe</label>
+        <input name="password" class="form-control" type="password" placeholder="Mot de Passe" required>
+    </div>
+    <div class="form-group">
+        <label>Numero de telephone</label>
+        <input name="tel" class="form-control" pattern="^[0-9]+$" placeholder="Votre numéro de téléphone" required>
+    </div>
+    <div class="form-group">
+        <label>Nom entreprise</label>
+        <input name="nom_entreprise" class="form-control" placeholder="Nom de l'entreprise" required>
+    </div>
+	<div class="form-group">
+		<label for="secteur">Secteur d'activite:</label>
+		<select name="secteur" class="form-control" id="secteur" required>
+			<option value="">--- Choisissez un secteur d'activité</option>
+			<option value="administration">Activités des organisations associatives et administration publique</option>
+			<option value="informatique">Activités informatiques</option>
+			<option value="juridique">Activités juridiques et comptables</option>
+			<option value="agroalimentaire">Agroalimentaire</option>
+			<option value="transport">Automobile, aéronautique et autres matériels de transport</option>
+			<option value="banque">Banque et Assurances</option>
+			<option value="bois">Bois - Papier - Imprimerie</option>
+			<option value="chimie">Chimie - Caoutchouc - Plastique</option>
+			<option value="commerce">Commerce interentreprises</option>
+			<option value="media">Communication et médias</option>
+			<option value="conseil">Conseil et gestion des entreprises</option>
+			<option value="construction">Construction</option>
+			<option value="distribution">Distribution généraliste et personnalisée</option>
+			<option value="energie">Energies - Eau</option>
+			<option value="electro">Equipements électriques et électroniques</option>
+			<option value="formation">Formation initiale et continue</option>
+			<option value="dechets">Gestion des déchets</option>
+			<option value="tourisme">Hôtellerie - Restauration - Loisirs</option>
+			<option value="immo">Immobillier</option>
+			<option value="pharmacie">Industrie pharmaceutique</option>
+			<option value="retd">Ingeniérie - R et D</option>
+			<option value="recrutement">Intermédiaires du recrutement</option>
+			<option value="mécanique">Mécanique - Métallurgie</option>
+			<option value="manufacture">Meuble, Textile et autres industries manufacturières</option>
+			<option value="sante">Santé - Action sociale</option>
+			<option value="services">Services diverses aux entreprises</option>
+			<option value="telecom">Télécommunications</option>
+			<option value="logistique">Transports et logistique</option>
+			<option value="autres">Autres</option>
+		</select>
+	</div>
+    <div class="form-group">
+        <label>Fonction</label>
+        <input name="fonction_entreprise" class="form-control" placeholder="Fonction dans l'entreprise" required>
+    </div>
+    <div class="form-group">
+        <label>Photo</label>
+        <input type="file" name="photo" class="form-control-file">
+    </div>
+	<div class="choix_partenaire">
+	<legend>Deja client AG2R ?</legend>
+	</div>
+	<div class="form-group">
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="client" name="client" value='1' required>
+            <label class="form-check-label" for="client">Oui</label>
+            <br>
+            <input type="radio" class="form-check-input" id="client" name="client" value='0' required>
+            <label class="form-check-label" for="client">Non</label>
+        </div>
+	</div>
+
+<br>
+    <center><input type="submit" class="btn btn-primary mb-2" value="S'enregistrer" style="text-align:center"></center>
+</form>
+
+</div>

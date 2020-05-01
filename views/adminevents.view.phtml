@@ -1,0 +1,45 @@
+<?php
+require(__DIR__ . '/../includes/eventslist.php');
+?>
+
+<div class="jumbotron" style="padding:5vw">
+    <div class="table-responsive">
+    <form action="includes/eventmanager.php" method="POST">
+        <table class="table table-bordered table-condensed table-body-center">
+
+            <thead style="background-color:rgba(22, 23, 25,0.2)" >
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Location</th>
+                <th scope="col">Date départ</th>
+                <th scope="col">Nombre Participants</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+
+
+            <tbody id="addSlotDiv">
+            <?php
+            foreach ($events as $key => $value) {
+                echo "<tr>";
+                echo "<td ><input required type='text' name='nom_" . $value->getName() . "' value='" . $value->getName() . "'></td>";
+                echo "<td><input required type='text' name='location_" . $value->getName() . "' value='" . $value->getLocation() . "'</td>";
+                echo "<td><input required type='text' name='datedepart_" . $value->getName() . "' value='" . $value->getStartDate() . "'</td>";
+                echo "<td>" . "<input readonly type='text' name='participants_" . $value->getName() . "' value=" . $value->getParticipants() . "></td>";
+                echo "<td><input role=\"button\" type=\"submit\" name=\"remove_" . $value->getName() . "\" class=\"btn btn-danger btn-lg\" value=\"Supprimer\"></td>";
+                echo "<tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+        <input role="button" type="submit" name="submit" class="btn btn-primary btn-lg" value="Valider"
+               style="float:left;">
+    </form>
+
+    <input type="submit" id="addSlot" value="Rajouter" role="button" class="btn btn-primary btn-lg"
+           style="margin-left:0.7vw;" onclick="createEventRow()">
+        <a href="adminfdr.php" role="button" class="btn btn-primary btn-lg"
+           style="margin-left:0.7vw;color:white">Voir feuille de route</a>
+
+</div>
+</div>

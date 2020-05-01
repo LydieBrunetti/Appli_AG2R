@@ -1,0 +1,32 @@
+<body style="background: #d1d1d1">
+
+<div class="container">
+
+<header class="row align-items-center" style="background-image: linear-gradient(white, #F5F3F3); border-radius: 50px; border-right:2px solid #00B9E5; border-left: 2px solid #00B9E5;">
+
+<div class="col-sm-4">
+<center><img class="img-fluid" src="img/logoAG2R_2.png"></center>
+</div>
+<div class="col-sm-8">
+<h1 style="color: #00B9E5; text-align: center;"> AG2R La Mondiale <br> Business Quick Meeting </h1>
+</div>
+
+</header>
+
+    <header style="background-image: linear-gradient(white, #F5F3F3); border-radius: 50px; border-right:2px solid #00B9E5; border-left: 2px solid #00B9E5;">
+
+        <h1 class="display-5 text-center" style="font-family: 'Helvetica', 'Arial', sans-serif;margin-bottom:0%;"> <?php echo "Bienvenue "; echo ucfirst($_SESSION['username']); ?> </h1>
+
+    </header>
+
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center" style="background-image: linear-gradient(white, #F5F3F3); border-radius: 50px; border-right:2px solid #00B9E5; border-left: 2px solid #00B9E5;margin-bottom:2%;">
+	<ul class="navbar-nav">
+		<li class="nav-item"><a href="adminevents.php" class="btn btn-light" role="button" style="color: #00B9E5;background-color:transparent;border-color: transparent">Gestion des evenements</a></li>
+		<li class="nav-item"><a href="adminusers.php" class="btn btn-light" role="button" style="color: #00B9E5;background-color:transparent;border-color: transparent">Gestion des participants</a></li>
+        <li class="nav-item"><a href="adminaddusertoevent.php" class="btn btn-light" role="button" style="color: #00B9E5;background-color:transparent;border-color: transparent">Rajout utilisateur evenement</a></li>
+        <li class="nav-item"><a href="admincreate.php" class="btn btn-light" role="button" style="color: #00B9E5;background-color:transparent;border-color: transparent">Creation de compte</a></li>
+
+		<li class="nav-item"><a href="includes/logout.php" class="btn btn-light" role="button" style="color: #00B9E5;background-color:transparent;border-color: transparent">Se deconnecter</a></li>
+	</ul>
+</nav>
+
