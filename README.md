@@ -20,8 +20,10 @@ L'application doit contenir un front-office destiné aux participants :
 - inscription à un évènement
 
 L'application doit contenir un back-office destiné au gestionnaire d'évènements :
+- interface d'authentification
 - page recensant tous les participants inscrits
 - création d'un nouvel évènement
 - inscription d'un utilisateur à un évènement
+- récupération de GoogleForms
 - calcul de tables : calculer le nombre de tables et le nombre de participants par table selon une matrice fourni par le client
 - édition d'une feuille de route pour chaque participant au format PDF
